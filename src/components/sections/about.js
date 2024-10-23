@@ -20,7 +20,7 @@ const StyledAboutSection = styled.section`
 `;
 const StyledText = styled.div`
   ul.skills-list {
-    display: grid;
+    display: row;
     grid-template-columns: repeat(2, minmax(140px, 200px));
     grid-gap: 0 10px;
     padding: 0;
@@ -125,8 +125,16 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
-
+  const skills = [
+    'Languages - Java, Python, C++, TypeScript, HTML, CSS',
+    'Technologies - Spring, Maven, React JS, Node JS',
+    'Database - SQL, OracleDB, MongoDB, MySQL',
+    'Other Tech - AzureCloud,GIT,Shell-Scripting,Splunk,Figma',
+  ];
+  // const languages = ['Java', 'Python', 'C++', 'TypeScript', 'HTML', 'CSS'];
+  // const technologies = ['Spring', 'Maven', 'React JS', 'Node JS'];
+  // const database = ['SQL', 'OracleDB', 'MongoDB', 'MySQL'];
+  // const otherTech = ['AzureCloud', 'GIT', 'Shell-Scripting', 'Splunk', 'Figma'];
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
       <h2 className="numbered-heading">About Me</h2>
@@ -135,13 +143,14 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hi, my name is Rohan Sawai, and I have a passion for designing and developing
+              applications that have a meaningful impact on people's lives. My Journey and
+              Highlights: Pursuing a Master of Science in XYZ with a GPA: ABC/ABC Working at PQR,
+              Description. Previously, spent two years at Citi Bank as a Software Developer in
+              Research Data Cataloge and Commodities Pulsar teams.
             </p>
 
-            <p>
+            {/* <p>
               Fast-forward to today, and I’ve had the privilege of working at{' '}
               <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
               <a href="https://starry.com/">a start-up</a>,{' '}
@@ -150,16 +159,16 @@ const About = () => {
               main focus these days is building accessible, inclusive products and digital
               experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
               clients.
-            </p>
+            </p> */}
 
-            <p>
+            {/* <p>
               I also recently{' '}
               <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
                 launched a course
               </a>{' '}
               that covers everything you need to build a web app with the Spotify API using Node
               &amp; React.
-            </p>
+            </p> */}
 
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>

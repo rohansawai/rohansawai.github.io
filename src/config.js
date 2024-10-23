@@ -14,10 +14,6 @@ module.exports = {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/rohan-sawai-646155169/',
     },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
-    },
   ],
 
   navLinks: [
