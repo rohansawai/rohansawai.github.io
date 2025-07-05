@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaUniversity, FaGraduationCap, FaLaptopCode, FaMapMarkerAlt, FaRegCalendarAlt, FaBriefcase } from 'react-icons/fa'
+import { FaGraduationCap, FaLaptopCode, FaMapMarkerAlt, FaRegCalendarAlt, FaBriefcase } from 'react-icons/fa'
 
 const Experience = () => {
   const experiences = [
