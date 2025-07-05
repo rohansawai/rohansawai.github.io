@@ -12,7 +12,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" style={{ backgroundColor: '#0a192f', padding: '100px 0' }}>
+    <section id="about" style={{ backgroundColor: '#0a192f', padding: '20px 0 100px 0' }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,47 +1,49 @@
 'use client'
+import React from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter } from 'lucide-react'
+import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md'
+import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa'
+
+const contactInfo = [
+  {
+    icon: MdEmail,
+    label: 'Email',
+    value: 'sawairohan90@vt.edu',
+    href: 'mailto:sawairohan90@vt.edu'
+  },
+  {
+    icon: MdPhone,
+    label: 'Phone',
+    value: '+1 (540) 824-9544',
+    href: 'tel:+15408249544'
+  },
+  {
+    icon: MdLocationOn,
+    label: 'Location',
+    value: 'Blacksburg, VA',
+    href: null
+  },
+  {
+    icon: FaLinkedin,
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/rohan-sawai-646155169',
+    href: 'https://www.linkedin.com/in/rohan-sawai-646155169/'
+  },
+  {
+    icon: FaTwitter,
+    label: 'Twitter',
+    value: '@rohan_sawai',
+    href: 'https://x.com/rohan_sawai'
+  },
+  {
+    icon: FaGithub,
+    label: 'GitHub',
+    value: 'github.com/rohansawai',
+    href: 'https://github.com/rohansawai'
+  }
+]
 
 export default function Contact() {
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'rohan.sawai@example.com',
-      href: 'mailto:rohan.sawai@example.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: 'New York, NY',
-      href: null
-    },
-    {
-      icon: Linkedin,
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/rohansawai',
-      href: 'https://linkedin.com/in/rohansawai'
-    },
-    {
-      icon: Twitter,
-      label: 'Twitter',
-      value: '@rohansawai',
-      href: 'https://twitter.com/rohansawai'
-    },
-    {
-      icon: Github,
-      label: 'GitHub',
-      value: 'github.com/rohansawai',
-      href: 'https://github.com/rohansawai'
-    }
-  ]
-
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
@@ -52,10 +54,15 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4" style={{ color: '#ccd6f6' }}>Get In Touch</h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#8892b0' }}>
-            I&apos;m always interested in hearing about new opportunities and exciting projects. 
-            Feel free to reach out!
-          </p>
+          <div className="flex justify-center w-full">
+            <p
+              className="text-xl max-w-3xl w-full text-center"
+              style={{ color: '#8892b0' }}
+            >
+              I&apos;m always interested in hearing about new opportunities and exciting projects. <br />
+              Feel free to reach out!
+            </p>
+          </div>
         </motion.div>
 
         <motion.div
@@ -75,11 +82,10 @@ export default function Contact() {
                 className="bg-opacity-10 bg-white rounded-lg p-6 border border-opacity-20 border-white hover:border-opacity-40 transition-all duration-300"
               >
                 <div className="flex items-center mb-4">
-                  <contact.icon 
-                    size={24} 
-                    style={{ color: '#64ffda' }} 
-                    className="mr-3"
-                  />
+                  {React.createElement(contact.icon, {
+                    color: '#64ffda',
+                    style: { width: 45, height: 45, minWidth: 45, minHeight: 45, marginRight: 8, verticalAlign: 'middle' }
+                  })}
                   <h3 className="text-lg font-semibold" style={{ color: '#ccd6f6' }}>
                     {contact.label}
                   </h3>

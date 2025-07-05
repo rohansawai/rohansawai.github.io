@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Briefcase, GraduationCap, Laptop } from 'lucide-react'
+import { FaUniversity, FaGraduationCap, FaLaptopCode, FaMapMarkerAlt, FaRegCalendarAlt } from 'react-icons/fa'
 
 const Experience = () => {
   const experiences = [
@@ -10,7 +10,7 @@ const Experience = () => {
       company: 'Citi Bank',
       location: 'Pune, India',
       period: 'July 2023 - January 2025',
-      icon: Briefcase,
+      icon: FaUniversity,
       description: [
         'Developed and maintained production code for Citivelocity applications using Spring framework for backend and React framework for frontend',
         'Worked on Research Data Catalogue and Commodities Pulsar teams',
@@ -24,7 +24,7 @@ const Experience = () => {
       company: 'Center for Geospatial Information Technology (CGIT), Virginia Tech',
       location: 'Blacksburg, Virginia',
       period: 'January 2023 - June 2023',
-      icon: GraduationCap,
+      icon: FaGraduationCap,
       description: [
         'Conducted research on geospatial data analysis and machine learning applications for environmental monitoring',
         'Developed algorithms for processing and analyzing large-scale geospatial datasets using Python and GIS tools',
@@ -38,7 +38,7 @@ const Experience = () => {
       company: 'Interact Software',
       location: 'Remote',
       period: 'May 2022 - August 2022',
-      icon: Laptop,
+      icon: FaLaptopCode,
       description: [
         'Developed and maintained web applications using modern JavaScript frameworks and cloud technologies',
         'Collaborated with senior developers to implement new features and improve existing functionality',
@@ -65,48 +65,131 @@ const Experience = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="rounded-lg shadow-lg p-8"
-              style={{ backgroundColor: '#112240' }}
-            >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                <div className="flex items-center space-x-4 mb-4 md:mb-0">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#233554' }}>
-                    <exp.icon className="w-8 h-8 flex-shrink-0 object-contain" style={{ color: '#64ffda', display: 'block' }} />
+        {/* True Alternating Timeline */}
+        <div className="relative">
+          {/* Central vertical line */}
+          <div className="hidden md:block absolute left-1/2 top-0 w-1 h-full bg-[#233554] opacity-60 -translate-x-1/2 z-0" />
+          <div className="flex flex-col gap-16 z-10">
+            {experiences.map((exp, index) => {
+              const isLeft = index % 2 === 0;
+              return (
+                <div key={index} className="grid grid-cols-9 items-center w-full">
+                  {/* Left card */}
+                  <div className={`col-span-4 ${isLeft ? '' : 'hidden md:block'}`}>
+                    {isLeft && (
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="bg-[#112240] rounded-lg shadow-lg p-6"
+                      >
+                        <div className="flex items-center space-x-4 mb-2">
+                          <h3 className="text-2xl font-bold" style={{ color: '#ccd6f6' }}>{exp.title}</h3>
+                          <span className="text-base font-semibold" style={{ color: '#8892b0' }}>{exp.company}</span>
+                        </div>
+                        <div className="flex items-center space-x-4 text-sm mb-2" style={{ color: '#8892b0' }}>
+                          <span className="flex items-center space-x-1">
+                            <FaMapMarkerAlt style={{ color: '#64ffda', width: 18, height: 18 }} />
+                            <span>{exp.location}</span>
+                          </span>
+                          <span className="flex items-center space-x-1">
+                            <FaRegCalendarAlt style={{ color: '#64ffda', width: 18, height: 18 }} />
+                            <span>{exp.period}</span>
+                          </span>
+                        </div>
+                        <ul className="space-y-2 mt-2">
+                          {exp.description.map((item, itemIndex) => (
+                            <li key={itemIndex} className="flex items-start space-x-2">
+                              <span className="mt-1" style={{ color: '#64ffda' }}>•</span>
+                              <span style={{ color: '#8892b0' }}>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2" style={{ color: '#ccd6f6' }}>{exp.title}</h3>
-                    <div className="flex items-center space-x-4" style={{ color: '#8892b0' }}>
-                      <span>{exp.company}</span>
-                      <span className="flex items-center space-x-1">
-                        <MapPin className="w-5 h-5 flex-shrink-0" style={{ color: '#64ffda' }} />
-                        <span>{exp.location}</span>
-                      </span>
-                      <span className="flex items-center space-x-1">
-                        <Calendar className="w-5 h-5 flex-shrink-0" style={{ color: '#64ffda' }} />
-                        <span>{exp.period}</span>
-                      </span>
+                  {/* Timeline node */}
+                  <div className="col-start-5 col-span-1 flex flex-col items-center z-10">
+                    <div className="z-10 w-10 h-10 rounded-full flex items-center justify-center border-4 border-[#0a192f] bg-[#64ffda] shadow-lg">
+                      {exp.icon && <exp.icon size={24} color="#0a192f" />}
                     </div>
+                    {index < experiences.length - 1 && (
+                      <div className="h-full w-1 bg-[#233554] opacity-60" style={{ minHeight: 40 }} />
+                    )}
+                  </div>
+                  {/* Right card */}
+                  <div className={`col-start-6 col-span-4 ${isLeft ? 'hidden md:block' : ''}`}>
+                    {!isLeft && (
+                      <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="bg-[#112240] rounded-lg shadow-lg p-6"
+                      >
+                        <div className="flex items-center space-x-4 mb-2">
+                          <h3 className="text-2xl font-bold" style={{ color: '#ccd6f6' }}>{exp.title}</h3>
+                          <span className="text-base font-semibold" style={{ color: '#8892b0' }}>{exp.company}</span>
+                        </div>
+                        <div className="flex items-center space-x-4 text-sm mb-2" style={{ color: '#8892b0' }}>
+                          <span className="flex items-center space-x-1">
+                            <FaMapMarkerAlt style={{ color: '#64ffda', width: 18, height: 18 }} />
+                            <span>{exp.location}</span>
+                          </span>
+                          <span className="flex items-center space-x-1">
+                            <FaRegCalendarAlt style={{ color: '#64ffda', width: 18, height: 18 }} />
+                            <span>{exp.period}</span>
+                          </span>
+                        </div>
+                        <ul className="space-y-2 mt-2">
+                          {exp.description.map((item, itemIndex) => (
+                            <li key={itemIndex} className="flex items-start space-x-2">
+                              <span className="mt-1" style={{ color: '#64ffda' }}>•</span>
+                              <span style={{ color: '#8892b0' }}>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                  </div>
+                  {/* Mobile: always show card below node */}
+                  <div className="col-span-9 md:hidden mt-4">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="bg-[#112240] rounded-lg shadow-lg p-6"
+                    >
+                      <div className="flex items-center space-x-4 mb-2">
+                        <h3 className="text-2xl font-bold" style={{ color: '#ccd6f6' }}>{exp.title}</h3>
+                        <span className="text-base font-semibold" style={{ color: '#8892b0' }}>{exp.company}</span>
+                      </div>
+                      <div className="flex items-center space-x-4 text-sm mb-2" style={{ color: '#8892b0' }}>
+                        <span className="flex items-center space-x-1">
+                          <FaMapMarkerAlt style={{ color: '#64ffda', width: 18, height: 18 }} />
+                          <span>{exp.location}</span>
+                        </span>
+                        <span className="flex items-center space-x-1">
+                          <FaRegCalendarAlt style={{ color: '#64ffda', width: 18, height: 18 }} />
+                          <span>{exp.period}</span>
+                        </span>
+                      </div>
+                      <ul className="space-y-2 mt-2">
+                        {exp.description.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-start space-x-2">
+                            <span className="mt-1" style={{ color: '#64ffda' }}>•</span>
+                            <span style={{ color: '#8892b0' }}>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
                   </div>
                 </div>
-              </div>
-              <ul className="space-y-2">
-                {exp.description.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start space-x-2">
-                    <span className="mt-1" style={{ color: '#64ffda' }}>•</span>
-                    <span style={{ color: '#8892b0' }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
