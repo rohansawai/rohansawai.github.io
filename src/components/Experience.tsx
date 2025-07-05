@@ -1,76 +1,112 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaUniversity, FaGraduationCap, FaLaptopCode, FaMapMarkerAlt, FaRegCalendarAlt } from 'react-icons/fa'
+import { FaUniversity, FaGraduationCap, FaLaptopCode, FaMapMarkerAlt, FaRegCalendarAlt, FaBriefcase } from 'react-icons/fa'
 
 const Experience = () => {
   const experiences = [
+    // Education
     {
-      title: 'Software Developer',
-      company: 'Citi Bank',
-      location: 'Pune, India',
-      period: 'July 2023 - January 2025',
-      icon: FaUniversity,
-      description: [
-        'Developed and maintained production code for Citivelocity applications using Spring framework for backend and React framework for frontend',
-        'Worked on Research Data Catalogue and Commodities Pulsar teams',
-        'Collaborated with cross-functional teams to deliver high-quality software solutions',
-        'Implemented new features and improvements based on business requirements',
-        'Participated in code reviews and contributed to team best practices'
-      ]
-    },
-    {
-      title: 'Research Assistant',
-      company: 'Center for Geospatial Information Technology (CGIT), Virginia Tech',
-      location: 'Blacksburg, Virginia',
-      period: 'January 2023 - June 2023',
+      type: 'education',
+      title: 'Master of Science in Computer Engineering',
+      company: 'Virginia Tech',
+      location: 'Blacksburg, VA',
+      period: 'Jan. 2025 – Dec. 2026 (expected)',
+      startDate: '2025-01',
       icon: FaGraduationCap,
       description: [
-        'Conducted research on geospatial data analysis and machine learning applications for environmental monitoring',
-        'Developed algorithms for processing and analyzing large-scale geospatial datasets using Python and GIS tools',
-        'Collaborated with faculty and graduate students on research projects involving remote sensing and spatial analysis',
-        'Implemented machine learning models for land use classification and environmental change detection',
-        'Presented research findings at departmental seminars and contributed to academic publications'
+        'GPA: 3.90/4.00',
+        'At Citi, I realized I wanted to go deeper into ML and LLMs, so I headed to Virginia Tech for my master’s.',
+        'Now I’m focused on research in LLMs especially agentic workflows and memory component.',
+        'Coursework: Advanced Machine Learning, Applications of Machine Learning, Compiler Optimizations',
       ]
     },
     {
-      title: 'Software Engineering Intern',
-      company: 'Interact Software',
-      location: 'Remote',
-      period: 'May 2022 - August 2022',
+      type: 'education',
+      title: 'Bachelor of Technology in Electronics and Telecommunications',
+      company: 'Veermata Jijabai Technological Institute (VJTI)',
+      location: 'Mumbai, India',
+      period: 'Aug. 2019 – Jun. 2023',
+      startDate: '2019-08',
+      icon: FaGraduationCap,
+      description: [
+        'During my undergrad at VJTI, I got deeply involved in side projects and hackathons—building everything from speech recognition systems to web apps. This hands-on work sparked my passion for ML and set me on the path to research and engineering.',
+        'Graduated with distinction. Senior project: "Propoganda detection using BERT"',
+        'Relevant coursework: Probability & Statistics, Digital Signal Processing, Machine Learning.'
+      ]
+    },
+    // Work Experience
+    {
+      type: 'work',
+      title: 'Software Developer',
+      company: 'Center for Geospatial Information Technology, Virginia Tech',
+      location: 'Blacksburg, VA',
+      period: 'Feb. 2025 – Present',
+      startDate: '2025-02',
       icon: FaLaptopCode,
       description: [
-        'Developed and maintained web applications using modern JavaScript frameworks and cloud technologies',
-        'Collaborated with senior developers to implement new features and improve existing functionality',
-        'Participated in agile development processes including sprint planning, code reviews, and daily standups',
-        'Worked on database design and optimization for improved application performance',
-        'Gained hands-on experience with full-stack development and software engineering best practices'
+        'Part of my work at CGIT was to build AI tools that let police and city officials ask questions like "Show me severe crashes in Fairfax County in the last 2 weeks?” and see the results directly on interactive maps.',
+        'I prompt-engineered LLMs to turn complex natural language queries into optimized multilevel SQL/PostGIS queries, then visualized the answers as map points, heatmaps, and spatial layers using GeoDjango and Leaflet.',
+        'This work helped transform raw map data into actionable, location-based insights for public safety.'
+      ]
+    },
+    {
+      type: 'work',
+      title: 'Software Engineer',
+      company: 'Citi Bank',
+      location: 'Pune, India',
+      period: 'July 2023 – Jan. 2025',
+      startDate: '2023-07',
+      icon: FaBriefcase,
+      description: [
+        'At Citi Bank, I wasn’t just writing code, I was collaborating with data scientists, experimenting with LLMs, and learning how to turn research into production systems.',
+        'Integrated LLMs (OpenAI GPT-3/4) for automated financial report generation and natural language analytics, reducing analyst workload.',
+        'Ensured production ML systems met enterprise security and compliance standards (JWT, SonarQube, Black Duck).' 
+      ]
+    },
+    {
+      type: 'work',
+      title: 'Software Engineer Intern',
+      company: 'InterAct Software',
+      location: 'Mumbai, India',
+      period: 'Jun. 2022 – Aug. 2022',
+      startDate: '2022-06',
+      icon: FaLaptopCode,
+      description: [
+        'My first real taste of industry ML/AI! I loved seeing how research ideas could become features that real users rely on.',
+        'I developed RESTful APIs and backend services for ML-powered web apps.',
+        'Assisted in building NLP pipelines for user feedback analysis and sentiment classification (spaCy, NLTK).',
+        'Worked with product managers to translate ML research into production features, improving user engagement and retention.'
       ]
     }
   ]
 
+  // Sort by startDate descending (latest first)
+  const sortedExperiences = [...experiences].sort((a, b) => b.startDate.localeCompare(a.startDate));
+
   return (
     <section id="experience" className="py-20" style={{ backgroundColor: '#0a192f' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4" style={{ color: '#ccd6f6' }}>Work Experience</h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#8892b0' }}>
-            My professional journey in software development
-          </p>
-        </motion.div>
+        <div className="max-w-2xl mx-auto text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold mb-4" style={{ color: '#ccd6f6' }}>Work Experience</h2>
+            <p className="text-xl" style={{ color: '#8892b0' }}>
+              My professional journey in software development
+            </p>
+          </motion.div>
+        </div>
 
         {/* True Alternating Timeline */}
         <div className="relative">
           {/* Central vertical line */}
           <div className="hidden md:block absolute left-1/2 top-0 w-1 h-full bg-[#233554] opacity-60 -translate-x-1/2 z-0" />
           <div className="flex flex-col gap-16 z-10">
-            {experiences.map((exp, index) => {
+            {sortedExperiences.map((exp, index) => {
               const isLeft = index % 2 === 0;
               return (
                 <div key={index} className="grid grid-cols-9 items-center w-full">
@@ -111,10 +147,10 @@ const Experience = () => {
                   </div>
                   {/* Timeline node */}
                   <div className="col-start-5 col-span-1 flex flex-col items-center z-10">
-                    <div className="z-10 w-10 h-10 rounded-full flex items-center justify-center border-4 border-[#0a192f] bg-[#64ffda] shadow-lg">
-                      {exp.icon && <exp.icon size={24} color="#0a192f" />}
+                    <div className="z-10 w-16 h-16 rounded-full flex items-center justify-center border-4 border-[#0a192f] bg-[#64ffda] shadow-lg">
+                      {exp.icon && <exp.icon size={36} color="#0a192f" />}
                     </div>
-                    {index < experiences.length - 1 && (
+                    {index < sortedExperiences.length - 1 && (
                       <div className="h-full w-1 bg-[#233554] opacity-60" style={{ minHeight: 40 }} />
                     )}
                   </div>

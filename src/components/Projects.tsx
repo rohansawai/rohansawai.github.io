@@ -6,23 +6,30 @@ import { ExternalLink, Github } from 'lucide-react'
 const Projects = () => {
   const projects = [
     {
-      title: 'Citivelocity Platform',
-      description: 'Full-stack application for financial data management and analysis using React and Spring Boot.',
-      tech: ['React', 'Spring Boot', 'Java', 'REST APIs'],
+      title: 'CGIT - Geospatial AI Query System',
+      description: 'AI-powered tool that lets users ask natural language questions about map data (e.g., “Show me severe crashes in Fairfax County in the last 2 weeks”) and see results as map points, heatmaps, or spatial layers.',
+      tech: ['LLMs', 'PostGIS', 'Django', 'Leaflet', 'Python'],
       github: '#',
       live: '#'
     },
     {
-      title: 'Research Data Catalogue',
-      description: 'Comprehensive data management system for research and analytics teams.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+      title: 'Citi Bank',
+      description: 'Full-stack application for financial data management and analysis, with ML-driven analytics and real-time dashboards.',
+      tech: ['React', 'Python', 'D3.js', 'WebSockets', 'Prometheus'],
       github: '#',
       live: '#'
     },
     {
-      title: 'Commodities Pulsar',
-      description: 'Real-time commodities trading and monitoring platform.',
-      tech: ['React', 'WebSocket', 'TypeScript', 'Tailwind CSS'],
+      title: 'TerraMind: Natural Language Polygon Tool for GIS Developers',
+      description: 'A tool for GIS developers that uses LLMs to convert natural language queries (e.g., “Give me the polygon for Central Park, NYC”) into precise area polygons, streamlining geospatial workflows.',
+      tech: ['LLMs', 'PostGIS', 'Python', 'Leaflet', 'Mapbox', 'React'],
+      github: '#',
+      live: '#'
+    },
+    {
+      title: 'Hiring Copilot for Meetings',
+      description: 'An AI assistant that joins meetings, transcribes discussions, and helps with candidate evaluation and note-taking—making the hiring process smarter and more efficient.',
+      tech: ['LLMs', 'Speech-to-Text', 'React', 'WebRTC'],
       github: '#',
       live: '#'
     }
@@ -31,18 +38,19 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20" style={{ backgroundColor: '#0a192f' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4" style={{ color: '#ccd6f6' }}>Featured Projects</h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#8892b0' }}>
-            Here are some of the projects I&apos;ve worked on during my time at Citi Bank
-          </p>
-        </motion.div>
+        <div className="max-w-2xl mx-auto text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold mb-4" style={{ color: '#ccd6f6' }}>Featured Projects</h2>
+            <p className="text-xl" style={{ color: '#8892b0' }}>
+              Here are some of the projects I&apos;ve worked on
+            </p>
+          </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (

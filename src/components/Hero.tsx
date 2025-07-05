@@ -39,20 +39,23 @@ const Hero = () => {
               Hi, I&apos;m <span style={{ color: '#64ffda' }}>Rohan Sawai</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-2xl mx-auto" style={{ color: '#8892b0' }}>
-              I am passionate about advancing the field of machine learning and artificial intelligence through research and engineering. I enjoy building robust ML systems and exploring new ideas at the intersection of data, algorithms, and real-world impact.
+              A machine learning engineer who loves building LLM-powered AI agents and scalable systems. I turn research into real-world impact, from deploying transformer models to crafting robust backends.<br /><br />
+              When I’m not coding, you’ll find me on the soccer field, at the gym, or grinding LeetCode.
             </p>
           </motion.div>
 
           {/* Description */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="text-xl max-w-2xl mx-auto"
-            style={{ color: '#8892b0' }}
+            transition={{ delay: 0.4 }}
+            className="space-y-4"
           >
-            Currently seeking research opportunities in ML/AI. Experienced in deep learning, NLP, and large-scale data systems. Open to collaborations and research assistantships.
-          </motion.p>
+            <p className="text-xl md:text-2xl max-w-2xl mx-auto" style={{ color: '#8892b0' }}>
+              I’m currently looking for research opportunities or assistantships in ML/AI—especially anything involving LLMs, agentic workflows, or applied deep learning. If you want to chat about research, code, working out, or even soccer, let’s connect!
+            </p>
+          </motion.div>
+
 
           {/* CTA Buttons */}
           <motion.div

@@ -6,8 +6,8 @@ import { Code, Database, Globe, Smartphone } from 'lucide-react'
 const About = () => {
   const skills = [
     { name: 'ML & Data Science', icon: Code, items: ['PyTorch', 'TensorFlow', 'scikit-learn', 'NLP', 'Deep Learning'] },
-    { name: 'Backend', icon: Database, items: ['Python', 'Node.js', 'Java', 'REST APIs'] },
-    { name: 'Tools', icon: Globe, items: ['Git', 'Docker', 'AWS', 'Linux'] },
+    { name: 'Backend', icon: Database, items: ['Python', 'Node.js', 'Java', 'Django', 'Postgres', 'REST APIs'] },
+    { name: 'Tools', icon: Globe, items: ['Git', 'Docker', 'AWS', 'Linux', 'GIS'] },
     { name: 'Frontend', icon: Smartphone, items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
   ]
 
