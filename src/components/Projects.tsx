@@ -40,7 +40,7 @@ const Projects = () => {
         >
           <h2 className="text-4xl font-bold mb-4" style={{ color: '#ccd6f6' }}>Featured Projects</h2>
           <p className="text-xl max-w-3xl mx-auto" style={{ color: '#8892b0' }}>
-            Here are some of the projects I've worked on during my time at Citi Bank
+            Here are some of the projects I&apos;ve worked on during my time at Citi Bank
           </p>
         </motion.div>
 

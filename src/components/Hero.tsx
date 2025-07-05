@@ -46,7 +46,7 @@ const Hero = () => {
             className="space-y-4"
           >
             <h1 className="text-4xl md:text-6xl font-bold" style={{ color: '#ccd6f6', lineHeight: 1.1 }}>
-              Hi, I'm <span style={{ color: '#64ffda' }}>Rohan Sawai</span>
+              Hi, I&apos;m <span style={{ color: '#64ffda' }}>Rohan Sawai</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-2xl mx-auto" style={{ color: '#8892b0' }}>
               I am passionate about advancing the field of machine learning and artificial intelligence through research and engineering. I enjoy building robust ML systems and exploring new ideas at the intersection of data, algorithms, and real-world impact.
