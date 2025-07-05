@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { MdEmail } from 'react-icons/md'
-import { FaDownload } from 'react-icons/fa'
+import { FaRegFileAlt } from 'react-icons/fa'
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -59,17 +59,15 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-2"
+            className="flex flex-col sm:flex-row justify-center items-center mb-2"
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={scrollToContact}
-              className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors shadow-lg text-base"
+              className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors shadow-lg text-base mr-4"
               style={{ 
                 backgroundColor: 'transparent',
                 color: '#64ffda',
-                border: '1px solid #64ffda'
               }}
               onMouseEnter={(e) => {
                 const target = e.target as HTMLElement
@@ -79,32 +77,28 @@ const Hero = () => {
                 const target = e.target as HTMLElement
                 target.style.backgroundColor = 'transparent'
               }}
+              onClick={scrollToContact}
             >
               <MdEmail size={16} />
               <span>Contact Me</span>
             </motion.button>
-            
-            <motion.button
+            {/* Vertical Divider */}
+            <div className="hidden sm:block h-8 w-px mx-2" style={{ backgroundColor: '#64ffda', opacity: 0.9 }} />
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors border-2 shadow-lg text-base"
+              className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors shadow-lg text-base ml-4"
               style={{ 
                 backgroundColor: 'transparent',
                 color: '#64ffda',
-                borderColor: '#64ffda'
               }}
-              onMouseEnter={(e) => {
-                const target = e.target as HTMLElement
-                target.style.backgroundColor = 'rgba(100, 255, 218, 0.1)'
-              }}
-              onMouseLeave={(e) => {
-                const target = e.target as HTMLElement
-                target.style.backgroundColor = 'transparent'
-              }}
+              href="https://drive.google.com/your-cv-link"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <FaDownload size={16} />
-              <span>Download CV</span>
-            </motion.button>
+              <FaRegFileAlt size={16} />
+              <span>Show CV</span>
+            </motion.a>
           </motion.div>
 
         </motion.div>
