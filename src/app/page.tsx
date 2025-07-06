@@ -13,9 +13,9 @@ export default function Home() {
       <Navigation />
       <Hero />
       <SectionDivider />
-      <About />
-      <SectionDivider />
       <Experience />
+      <SectionDivider />
+      <About />
       <SectionDivider />
       <Projects />
       <SectionDivider />

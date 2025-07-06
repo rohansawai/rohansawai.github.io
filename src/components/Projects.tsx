@@ -28,7 +28,7 @@ const Projects = () => {
     },
     {
       title: 'Hiring Copilot for Meetings',
-      description: 'An AI assistant that joins meetings, transcribes discussions, and helps with candidate evaluation and note-taking—making the hiring process smarter and more efficient.',
+      description: 'An AI agent that joins meetings, transcribes discussions, and helps with candidate evaluation and note-taking—making the hiring process smarter and more efficient.',
       tech: ['LLMs', 'Speech-to-Text', 'React', 'WebRTC'],
       github: '#',
       live: '#'
@@ -60,7 +60,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="rounded-lg p-6 hover:shadow-lg transition-shadow"
+              className="rounded-lg p-6 hover:shadow-lg transition-shadow w-full max-w-full mb-8 md:mb-0"
               style={{ backgroundColor: '#112240' }}
             >
               <h3 className="text-xl font-bold mb-3" style={{ color: '#ccd6f6' }}>{project.title}</h3>

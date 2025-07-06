@@ -8,22 +8,22 @@ const Experience = () => {
     // Education
     {
       type: 'education',
-      title: 'Master of Science in Computer Engineering',
+      title: 'MS in Computer Engineering',
       company: 'Virginia Tech',
       location: 'Blacksburg, VA',
-      period: 'Jan. 2025 – Dec. 2026 (expected)',
+      period: 'Jan. 2025 – Present',
       startDate: '2025-01',
       icon: FaGraduationCap,
       description: [
         'GPA: 3.90/4.00',
-        'At Citi, I realized I wanted to go deeper into ML and LLMs, so I headed to Virginia Tech for my master’s.',
-        'Now I’m focused on research in LLMs especially agentic workflows and memory component.',
+        'While at Citi bank, I realized I wanted to go deeper into ML and LLMs, so I headed to Virginia Tech for my master’s.',
+        'Now I’m focused on research in LLMs especially agentic workflows, vector DBs and memory component.',
         'Coursework: Advanced Machine Learning, Applications of Machine Learning, Compiler Optimizations',
       ]
     },
     {
       type: 'education',
-      title: 'Bachelor of Technology in Electronics and Telecommunications',
+      title: 'B.Tech in ECE',
       company: 'Veermata Jijabai Technological Institute (VJTI)',
       location: 'Mumbai, India',
       period: 'Aug. 2019 – Jun. 2023',
@@ -106,13 +106,13 @@ const Experience = () => {
           {/* Central vertical line */}
           <div className="hidden md:block absolute left-1/2 top-0 w-1 h-full bg-[#233554] opacity-60 -translate-x-1/2 z-0" />
           <div className="flex flex-col gap-16 z-10">
-            {sortedExperiences.map((exp, index) => {
-              const isLeft = index % 2 === 0;
-              return (
-                <div key={index} className="grid grid-cols-9 items-center w-full">
+            {sortedExperiences.map((exp, index) => (
+              <div key={index} className="w-full">
+                {/* Desktop: alternating timeline */}
+                <div className="hidden md:grid grid-cols-9 items-center w-full">
                   {/* Left card */}
-                  <div className={`col-span-4 ${isLeft ? '' : 'hidden md:block'}`}>
-                    {isLeft && (
+                  <div className={`col-span-4 ${index % 2 === 0 ? '' : 'hidden md:block'}`}>
+                    {index % 2 === 0 && (
                       <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -155,8 +155,8 @@ const Experience = () => {
                     )}
                   </div>
                   {/* Right card */}
-                  <div className={`col-start-6 col-span-4 ${isLeft ? 'hidden md:block' : ''}`}>
-                    {!isLeft && (
+                  <div className={`col-start-6 col-span-4 ${index % 2 === 0 ? 'hidden md:block' : ''}`}>
+                    {index % 2 !== 0 && (
                       <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -223,8 +223,44 @@ const Experience = () => {
                     </motion.div>
                   </div>
                 </div>
-              );
-            })}
+                {/* Mobile: vertical stack */}
+                <div className="md:hidden flex flex-col items-center w-full mb-8">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center border-4 border-[#0a192f] bg-[#64ffda] shadow-lg mb-2">
+                    {exp.icon && <exp.icon size={36} color="#0a192f" />}
+                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-[#112240] rounded-lg shadow-lg p-6 w-full max-w-full"
+                  >
+                    <div className="flex items-center space-x-4 mb-2">
+                      <h3 className="text-2xl font-bold" style={{ color: '#ccd6f6' }}>{exp.title}</h3>
+                      <span className="text-base font-semibold" style={{ color: '#8892b0' }}>{exp.company}</span>
+                    </div>
+                    <div className="flex flex-wrap items-center space-x-4 text-sm mb-2" style={{ color: '#8892b0' }}>
+                      <span className="flex items-center space-x-1">
+                        <FaMapMarkerAlt style={{ color: '#64ffda', width: 18, height: 18 }} />
+                        <span>{exp.location}</span>
+                      </span>
+                      <span className="flex items-center space-x-1">
+                        <FaRegCalendarAlt style={{ color: '#64ffda', width: 18, height: 18 }} />
+                        <span>{exp.period}</span>
+                      </span>
+                    </div>
+                    <ul className="space-y-2 mt-2">
+                      {exp.description.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-start space-x-2">
+                          <span className="mt-1" style={{ color: '#64ffda' }}>•</span>
+                          <span style={{ color: '#8892b0' }}>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

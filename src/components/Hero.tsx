@@ -95,7 +95,7 @@ const Hero = () => {
                 backgroundColor: 'transparent',
                 color: '#64ffda',
               }}
-              href="https://drive.google.com/your-cv-link"
+              href="https://drive.google.com/file/d/1LHRQ_Q-nIHi3ecKm5Oqr7eCXBE9NBwkn/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
