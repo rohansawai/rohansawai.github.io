@@ -1,10 +1,4 @@
-# Rohan Sawai - Portfolio
-
 A modern, responsive portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
-
-## About
-
-This is the personal portfolio of Rohan Sawai, a Full-Stack Software Developer currently working at Citi Bank and pursuing his Master's degree in the USA. The portfolio showcases my skills, experience, and projects in an interactive and visually appealing way.
 
 ## Features
 
@@ -50,9 +44,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Deployment
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-## Contact
-
-- **Email**: rohan.sawai@example.com
-- **LinkedIn**: [linkedin.com/in/rohansawai](https://linkedin.com/in/rohansawai)
-- **GitHub**: [github.com/rohansawai](https://github.com/rohansawai)
