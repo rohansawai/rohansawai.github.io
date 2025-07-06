@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Code, Database, Globe, Smartphone } from 'lucide-react'
 import { FaPython, FaReact, FaNodeJs, FaJava, FaDocker, FaGitAlt, FaAws, FaLinux } from 'react-icons/fa'
-import { SiTensorflow, SiPytorch, SiScikitlearn, SiDjango, SiPostgresql, SiNumpy, SiTypescript, SiTailwindcss, SiNextdotjs, SiQgis } from 'react-icons/si'
+import { SiTensorflow, SiPytorch, SiScikitlearn, SiDjango, SiPostgresql, SiTypescript, SiTailwindcss, SiNextdotjs, SiQgis } from 'react-icons/si'
 
 const About = () => {
   const skills = [
