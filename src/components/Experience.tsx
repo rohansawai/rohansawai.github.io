@@ -46,7 +46,7 @@ const Experience = () => {
       icon: FaLaptopCode,
       description: [
         'Part of my work at CGIT was to build AI tools that let police and city officials ask questions like "Show me severe crashes in Fairfax County in the last 2 weeks?” and see the results directly on interactive maps.',
-        'I prompt-engineered LLMs to turn complex natural language queries into optimized multilevel SQL/PostGIS queries, then visualized the answers as map points, heatmaps, and spatial layers using GeoDjango and Leaflet.',
+        'I built AI agents to turn complex natural language queries into optimized multilevel SQL/PostGIS queries, then visualized the answers as map points, heatmaps, and spatial layers using GeoDjango and Leaflet.',
         'This work helped transform raw map data into actionable, location-based insights for public safety.'
       ]
     },
