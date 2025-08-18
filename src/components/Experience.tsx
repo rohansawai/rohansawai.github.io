@@ -38,6 +38,20 @@ const Experience = () => {
     // Work Experience
     {
       type: 'work',
+      title: 'CoFounder/CTO',
+      company: 'Axion Orbital Space',
+      location: 'San Francisco, CA',
+      period: 'May 2025 – Present',
+      startDate: '2025-05',
+      icon: FaLaptopCode,
+      description: [
+        'We are building a no‑code, browser‑based IDE that compresses weeks of satellite‑data modelling into seconds and slashes costs by more than 90%. An analyst simply types “Track all vessels in the Pacific over the last 24 h” and, without writing a line of GIS code, instantly receives a downloadable, planetary‑scale layer.',
+        'Behind the scenes we stream curated global imagery, spin up autoscaling compute, and expose a plug‑in marketplace of pre‑built models. A task that now demands a $90 k geospatial engineer, pricey ArcGIS/GEE licences, and ~$1k of cloud ; about $15k per project, drops to $1.2k/user/year.',
+        'For a hedge‑fund satellite desk running 50 such models that’s a $700k annual saving; for an ag‑tech team running weekly crop‑stress maps, spend falls from ~$240 k to $12 k.'
+      ]
+    },
+    {
+      type: 'work',
       title: 'Software Developer',
       company: 'Center for Geospatial Information Technology, Virginia Tech',
       location: 'Blacksburg, VA',

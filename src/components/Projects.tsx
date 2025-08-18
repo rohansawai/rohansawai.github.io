@@ -7,7 +7,7 @@ const Projects = () => {
   const projects = [
     {
       title: 'CGIT - Geospatial AI Query System',
-      description: 'AI-powered tool that lets users ask natural language questions about map data (e.g., “Show me severe crashes in Fairfax County in the last 2 weeks”) and see results as map points, heatmaps, or spatial layers.',
+      description: 'LLM-powered tool that lets users ask natural language questions about map data (e.g., “Show me severe crashes in Fairfax County in the last 2 weeks”) and see results as map points, heatmaps, or spatial layers.',
       tech: ['LLMs', 'PostGIS', 'Django', 'Leaflet', 'Python'],
       github: '#',
       live: '#'
