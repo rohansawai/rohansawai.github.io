@@ -39,7 +39,7 @@ const Hero = () => {
               Hi, I&apos;m <span style={{ color: '#64ffda' }}>Rohan Sawai</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-2xl mx-auto" style={{ color: '#8892b0' }}>
-              A machine learning engineer who loves building LLM-powered AI agents and scalable systems. I turn research into real-world impact, from deploying transformer models to crafting robust backends.<br /><br />
+              I work on geospatial tools, Language Model inference and scalable systems.<br /><br />
               When I’m not coding, you’ll find me on the soccer field, at the gym, or grinding LeetCode.
             </p>
           </motion.div>
@@ -52,7 +52,7 @@ const Hero = () => {
             className="space-y-4"
           >
             <p className="text-xl md:text-2xl max-w-2xl mx-auto" style={{ color: '#8892b0' }}>
-              I’m currently looking for research opportunities or assistantships in ML/AI—especially anything involving LLMs, agentic workflows, or applied deep learning. If you want to chat about research, code, working out, or even soccer, let’s connect!
+              I will be in the job market in 2026 for internship/full-time opportunities in ML Inference, Software and Applied ML. If you want to chat about research, code, working out, or even soccer, let’s connect!
             </p>
           </motion.div>
 
@@ -95,7 +95,7 @@ const Hero = () => {
                 backgroundColor: 'transparent',
                 color: '#64ffda',
               }}
-              href="https://drive.google.com/file/d/1s-X4Eoww5zzdGV_2jTQdK9jwPqbA2YmQ/view?usp=sharing"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
             >
