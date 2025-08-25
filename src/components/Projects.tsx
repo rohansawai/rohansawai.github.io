@@ -6,33 +6,12 @@ import { ExternalLink, Github } from 'lucide-react'
 const Projects = () => {
   const projects = [
     {
-      title: 'CGIT - Geospatial AI Query System',
-      description: 'LLM-powered tool that lets users ask natural language questions about map data (e.g., “Show me severe crashes in Fairfax County in the last 2 weeks”) and see results as map points, heatmaps, or spatial layers.',
-      tech: ['LLMs', 'PostGIS', 'Django', 'Leaflet', 'Python'],
-      github: '#',
-      live: '#'
-    },
-    {
       title: 'Citi Bank',
       description: 'Full-stack application for financial data management and analysis, with ML-driven analytics and real-time dashboards.',
       tech: ['React', 'Python', 'D3.js', 'WebSockets', 'Prometheus'],
       github: '#',
       live: '#'
     },
-    {
-      title: 'TerraMind: Natural Language Polygon Tool for GIS Developers',
-      description: 'A tool for GIS developers that uses LLMs to convert natural language queries (e.g., “Give me the polygon for Central Park, NYC”) into precise area polygons, streamlining geospatial workflows.',
-      tech: ['LLMs', 'PostGIS', 'Python', 'Leaflet', 'Mapbox', 'React'],
-      github: '#',
-      live: '#'
-    },
-    {
-      title: 'Hiring Copilot for Meetings',
-      description: 'An AI agent that joins meetings, transcribes discussions, and helps with candidate evaluation and note-taking—making the hiring process smarter and more efficient.',
-      tech: ['LLMs', 'Speech-to-Text', 'React', 'WebRTC'],
-      github: '#',
-      live: '#'
-    }
   ]
 
   return (
