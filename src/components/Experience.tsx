@@ -57,9 +57,8 @@ const Experience = () => {
       startDate: '2025-02',
       icon: FaLaptopCode,
       description: [
-        'Part of my work at CGIT was to build AI tools that let police and city officials ask questions like "Show me severe crashes in Fairfax County in the last 2 weeks?” and see the results directly on interactive maps.',
-        'I built AI agents to turn complex natural language queries into optimized multilevel SQL/PostGIS queries, then visualized the answers as map points, heatmaps, and spatial layers using GeoDjango and Leaflet.',
-        'This work helped transform raw map data into actionable, location-based insights for public safety.'
+        'Geospatial Web Applications: Engineered scalable, high-performance Django and GeoDjango applications for real-time mapping and spatial analytics, leveraging PostGIS and RESTful APIs to serve interactive map layers.',
+        'AI-Powered Spatial Query Interface: Architected and implemented a Django web app that converts natural-language questions into optimized, multilevel PostGIS SQL queries, and visualizes the results as interactive map layers using Leaflet.js',
       ]
     },
     {
@@ -85,7 +84,6 @@ const Experience = () => {
       startDate: '2022-06',
       icon: FaLaptopCode,
       description: [
-        'My first real taste of industry ML/AI! I loved seeing how research ideas could become features that real users rely on.',
         'I developed RESTful APIs and backend services for ML-powered web apps.',
         'Assisted in building NLP pipelines for user feedback analysis and sentiment classification (spaCy, NLTK).',
         'Worked with product managers to translate ML research into production features, improving user engagement and retention.'
