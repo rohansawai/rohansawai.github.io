@@ -38,18 +38,6 @@ const Experience = () => {
     // Work Experience
     {
       type: 'work',
-      title: 'CoFounder/CTO',
-      company: 'Axion Orbital Space',
-      location: 'San Francisco, CA',
-      period: 'May 2025 – Present',
-      startDate: '2025-05',
-      icon: FaLaptopCode,
-      description: [
-        'Building a browser‑based IDE that compresses weeks of satellite‑data modelling into seconds',
-      ]
-    },
-    {
-      type: 'work',
       title: 'Software Developer',
       company: 'Center for Geospatial Information Technology, Virginia Tech',
       location: 'Blacksburg, VA',
